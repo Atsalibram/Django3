@@ -1,5 +1,5 @@
 
-from __future__ import unicode_literals
+#from __future__ import unicode_literals
 import numpy as np
 from django.db.models.signals import post_save
 from django.db.models import Avg, Max, Min
@@ -21,7 +21,6 @@ class tags(models.Model):
 
     def delete_tags(self):
         self.delete()
-
 
 class Location(models.Model):
     name = models.CharField(max_length=30)
