@@ -18,7 +18,7 @@ urlpatterns = [
     url(r'^ajax/newsletter/$', views.newsletter, name='newsletter'),
     url(r'^api/project/$', views.ProjectList.as_view()),
     url(r'api/project/project-id/(?P<pk>[0-9]+)/$',
-        #views.ProjectDescription.as_view()),
+        views.ProjectDescription.as_view()),
     url(r'^api/profile/$', views.ProfileList.as_view()),
     url(r'api/profile/profile-id/(?P<pk>[0-9]+)/$',
         views.ProfileDescription.as_view()),
@@ -30,6 +30,8 @@ urlpatterns = [
     # ex: /project/
     url(r'^project$', views.project_list, name='project_list'),
 ]
+
+
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)
